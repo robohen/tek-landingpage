@@ -17,7 +17,7 @@ const ContactComponent = () => {
     e.preventDefault();
     // submit logic goes here
     //console.log(formData);
-    // Reset the form after submission
+    // Resets form after submission
     setFormData({
       fullName: '',
       email: '',
@@ -26,6 +26,7 @@ const ContactComponent = () => {
     });
   };
   return (
+    <div className='home-content'>
     <form onSubmit={handleSubmit}>
     <input
       className="fullName"
@@ -72,6 +73,7 @@ const ContactComponent = () => {
     <input type="submit" value="Send" className="submit" />
     <input type="reset" value="Reset" className="reset" />
   </form>
+  </div>
 );
 };
 
