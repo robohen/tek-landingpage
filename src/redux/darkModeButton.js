@@ -14,11 +14,7 @@ const DarkModeButton = () => {
     document.body.style.backgroundColor = isNightMode ? "#292c35" : "#fff";
     const nightModeElements = document.querySelectorAll(".night-mode-available");
     nightModeElements.forEach((element) => {
-      if (isNightMode) {
-        element.classList.add("night");
-      } else {
-        element.classList.remove("night");
-      }
+      element.classList.toggle("night", isNightMode);
     });
     
   }, [isNightMode]);
@@ -32,7 +28,6 @@ const DarkModeButton = () => {
         onChange={handleDarkModeToggle}
       />
       <label htmlFor="night-mode" className="label">
-      
         {isNightMode ? <BsSun className="fas fa-sun"/> : <BsMoon className="fas fa-moon" />}
         <div className="blob"></div>
       </label>
