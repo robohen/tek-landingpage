@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="footer night-mode-available text">
+    <div className="footer night-mode-available text body">
       <a href="https://github.com/robohen">
         <img
           className="githubicon"

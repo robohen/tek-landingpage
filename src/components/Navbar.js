@@ -9,12 +9,12 @@ const Navbar = () => {
     });
   };
   return (
-    <div className="topnav">
+    <div className="topnav body">
       <Link to="/" className="active" >
         Home
       </Link>
       <Link to="/ProjectsPage">Projects</Link>
-      <Link to ="/ContactPage">Contact</Link>
+      <Link to ="/Pokemon">Pokemon</Link>
       <Link className="link" onClick={handleCopyLink}>
         Link
       </Link>
