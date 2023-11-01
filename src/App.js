@@ -1,28 +1,29 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import ProjectsPage from './components/ProjectsPage';
 import Pokemon from './components/Pokemon';
 import Layout from './components/Layout';
 import './App.css';
-import DarkModeButton from './redux/darkModeButton';
-import store from './redux/store/store';
+import {NightModeButton} from './components/NightModeButton';
+import { NightModeProvider } from './components/NightModeContext';
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <DarkModeButton />
-    <Router>
-        <Routes >
-        <Route path="/" element={<Layout />}>
-            <Route index element={<Home />}/>
-            <Route path = "/ProjectsPage" element={<ProjectsPage />}/>
-            <Route path ="/Pokemon" element ={<Pokemon />}/>
-        </Route>
-        </Routes>
-    </Router>
-    </Provider>
+     <>
+        <Router>
+          <NightModeProvider >
+          <NightModeButton />
+          <Routes >
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/ProjectsPage" element={<ProjectsPage />} />
+              <Route path="/Pokemon" element={<Pokemon />} />
+            </Route>
+          </Routes>
+          </NightModeProvider>
+        </Router>
+        </>
   )
 }
 

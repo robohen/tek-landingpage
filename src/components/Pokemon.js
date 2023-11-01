@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
+
 const Pokemon = () => {
   const [randomPokemon, setRandomPokemon] = useState(null);
 
   const handleRandomPokemon = () => {
+
     // Generate a random number between 1 and 898 (total number of Pokémon in the API)
     const randomId = Math.floor(Math.random() * 898) + 1;
 
